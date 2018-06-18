@@ -3,3 +3,42 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.main {
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+ul>li:hover {
+  background-color: #F5F5F5;
+}
+
+
+.form-inline .form-control {
+  width: 50%;
+  margin-left: 80px;
+}
+
+.done {
+  color: red;
+  text-decoration: line-through;
+}
+
+* {
+  color: #333;
+  font-size: 20px;
+  font-family: Helvetica;
+}
+
+.footer {
+  border-top: 1px solid #888;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
