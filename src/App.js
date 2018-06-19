@@ -45,19 +45,19 @@ handleCheckboxClick(todo,e){
         e.stopPropagation();
     }
 
-handleClick(itemToBeDeleted) {
+handleClick(itemToBeDeleted, e) {
     // e.preventDefault();
-    console.log('selected item:',itemToBeDeleted)
+    console.log('selected item:',itemToBeDeleted, 'items: ', this.state.todos)
     var newItems = this.state.todos.filter( (_item) => {
       return _item !== itemToBeDeleted
-    } )
+    })
 
     this.setState({ 
         todos: newItems,
         isMouseInside: true
      });
 
-itemToBeDeleted.stopPropagation();
+    e.stopPropagation();
  }
 
 backToFalse() {

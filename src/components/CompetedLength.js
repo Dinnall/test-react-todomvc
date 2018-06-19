@@ -11,8 +11,8 @@ return(
 }
 
 
-CompetedLength.propTypes = {
-  incomplete: PropTypes.bool.isRequired,
-};
+// CompetedLength.propTypes = {
+//   incomplete: PropTypes.bool.isRequired,
+// };
 
 export default CompetedLength;

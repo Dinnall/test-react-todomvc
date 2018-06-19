@@ -17,7 +17,7 @@ const IndividualTodoItem = (props)=>{
                         </span>
                          <div>
                          <DeleteItem
-                            handleClick={(itemToBeDeleted)=>props.handleClick(itemToBeDeleted)}
+                            handleClick={props.handleClick}
                             todo={props.todo}
                          />
                          </div>
