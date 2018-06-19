@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 
-// import all components 
 import CompetedLength from './components/CompetedLength';
 import TodoArchive from './components/TodoArchive';
 import AddItemToList from './components/AddItemToList';
@@ -19,7 +18,7 @@ export default class App extends Component{
         this.handleListItemClick = this.handleListItemClick.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.handleRemoveItem = this.handleRemoveItem.bind(this)
+        this.backToFalse= this.backToFalse.bind(this);
     }
 
 handleChange(e){
@@ -46,18 +45,24 @@ handleCheckboxClick(todo,e){
         e.stopPropagation();
     }
 
-handleClick(e,id) {
-        const todos = this.state.todos.filter((todo)=>{
-            if(todo.id!==id){
-                return todo;
-            }
-        });
+handleClick(itemToBeDeleted) {
+    // e.preventDefault();
+    console.log('selected item:',itemToBeDeleted)
+    var newItems = this.state.todos.filter( (_item) => {
+      return _item !== itemToBeDeleted
+    } )
 
-        this.setState({
-            todos
-        });
-        e.stopPropagation();
-    }
+    this.setState({ 
+        todos: newItems,
+        isMouseInside: true
+     });
+
+itemToBeDeleted.stopPropagation();
+ }
+
+backToFalse() {
+  this.setState({ isMouseInside: false });
+}
 
 handleKeyPress(e){
         e.preventDefault();
@@ -77,25 +82,11 @@ handleKeyPress(e){
         }
 }
 
-  handleRemoveItem = e => {
-    const { todos } = this.state;
-
-    let itemRemoved = e.target.id;
-    let newList;
-    newList = todos.filter(item => {
-      if (item.id !== itemRemoved) {
-        return item;
-      }
-    });
-
-    this.setState({
-      todos: newList
-    });
-  };
-
 render(){
             return(
-                <div className="main">
+                <div className="main"
+
+                >
 
                     <h1>Todo App</h1>
                     <AddItemToList
@@ -109,7 +100,6 @@ render(){
                         handleCheckboxClick = {this.handleCheckboxClick}
                         handleClick= {this.handleClick}
                         handleListItemClick ={this.handleListItemClick}
-                        handleRemoveItem={this.handleRemoveItem}
                     />
                      <span className='footer'>
                     <CompetedLength

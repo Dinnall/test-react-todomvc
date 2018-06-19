@@ -12,8 +12,8 @@ const TodoArchive = (props)=>{
                             todo={todo}
                             handleCheckboxClick={(todo,e)=>props.handleCheckboxClick(todo,e)}
                             handleListItemClick={(todo)=>{props.handleListItemClick(todo)}}
-                            handleClick={(e,id)=>props.handleClick(e,id)}
-                            handleRemoveItem={(todo,e)=>props.handleCheckboxClick(todo,e)}
+                            handleClick={(itemToBeDeleted)=>props.handleClick(itemToBeDeleted)
+                            }
                             />
                     );
                 })}

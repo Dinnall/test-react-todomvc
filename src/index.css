@@ -42,3 +42,8 @@ ul>li:hover {
   display: flex;
   justify-content: space-between;
 }
+
+.deleteItem{
+   display: flex;
+  justify-content: flex-end;
+}

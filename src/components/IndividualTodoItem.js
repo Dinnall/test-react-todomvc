@@ -1,17 +1,24 @@
 import React from 'react';
+import DeleteItem from './DeleteItem'
 
 const IndividualTodoItem = (props)=>{
 
         return(
+               <div >
                 <li onClick={()=>props.handleListItemClick(props.todo)}
-                    className={(props.todo.completed===true)?'completed' : ''}>
+                    className={(props.todo.completed===true)?'completed' : ''}
+                    
+                    >
 
                     <div>
                         <span>
                             {props.todo.value}
                         </span>
                          <div>
-
+                         <DeleteItem
+                            handleClick={(itemToBeDeleted)=>props.handleClick(itemToBeDeleted)}
+                            todo={props.todo}
+                         />
                          </div>
                         <input
                             type="checkbox"
@@ -20,6 +27,7 @@ const IndividualTodoItem = (props)=>{
                         />
                     </div>
                 </li>
+                </div>
         );
     }
 
