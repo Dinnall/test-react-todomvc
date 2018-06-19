@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CompetedLength = (props)=>{
   let length = props.incomplete.length;
@@ -8,5 +9,10 @@ return(
         </div>
     );
 }
+
+
+CompetedLength.propTypes = {
+  incomplete: PropTypes.bool.isRequired,
+};
 
 export default CompetedLength;

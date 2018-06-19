@@ -1,5 +1,6 @@
 import React from 'react';
 import DeleteItem from './DeleteItem'
+import PropTypes from 'prop-types';
 
 const IndividualTodoItem = (props)=>{
 
@@ -30,5 +31,7 @@ const IndividualTodoItem = (props)=>{
                 </div>
         );
     }
+
+
 
     export default IndividualTodoItem;

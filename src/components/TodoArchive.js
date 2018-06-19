@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IndividualTodoItem from './IndividualTodoItem';
 
 const TodoArchive = (props)=>{
@@ -21,5 +22,10 @@ const TodoArchive = (props)=>{
             </div>
         );
 }
+
+TodoArchive.propTypes = {
+  todos: PropTypes.array.isRequired,
+};
+
 
 export default TodoArchive;
