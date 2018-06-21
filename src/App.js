@@ -11,14 +11,13 @@ export default class App extends Component{
         this.state= {
             input: '',
             todos: [],
-            isMouseInside: false
+            hover: false
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
         this.handleListItemClick = this.handleListItemClick.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
-        this.backToFalse= this.backToFalse.bind(this);
     }
 
 handleChange(e){
@@ -53,16 +52,19 @@ handleClick(itemToBeDeleted, e) {
     })
 
     this.setState({ 
-        todos: newItems,
-        isMouseInside: true
-     });
+        todos: newItems
+    });
 
     e.stopPropagation();
  }
 
-backToFalse() {
-  this.setState({ isMouseInside: false });
-}
+hoverOn(){
+      this.setState({ hover: true });
+    }
+
+hoverOff(){ 
+      this.setState({ hover: false });    
+    }
 
 handleKeyPress(e){
         e.preventDefault();

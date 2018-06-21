@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const DeleteItem = (props)=>{
-	const handleDelete = (e) => {
-		props.handleClick(props.todo, e)
-	}
-
+	// const handleDelete = (e) => {
+	// 	props.handleClick(props.todo, e)
+	// }
+// const buttonHover = false
       return(  
-        <span className="deleteItem">
+        <span  className={(props.hover===true)?'deleteButton' : 'hideDeleteButton'}>
              <button onClick={(e) => props.handleClick(props.todo,e)}>
               [x]
              </button>

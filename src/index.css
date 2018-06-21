@@ -43,7 +43,19 @@ ul>li:hover {
   justify-content: space-between;
 }
 
-.deleteItem{
-   display: flex;
+.deleteButton{
+  display: flex;
   justify-content: flex-end;
+  visibility: visible;
 }
+
+.hideDeleteButton{
+  display: flex;
+  justify-content: flex-end;
+  visibility: hidden;
+}
+
+
+
+
+

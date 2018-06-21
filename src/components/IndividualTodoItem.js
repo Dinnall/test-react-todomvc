@@ -1,6 +1,5 @@
 import React from 'react';
 import DeleteItem from './DeleteItem'
-import PropTypes from 'prop-types';
 
 const IndividualTodoItem = (props)=>{
 
@@ -19,6 +18,9 @@ const IndividualTodoItem = (props)=>{
                          <DeleteItem
                             handleClick={props.handleClick}
                             todo={props.todo}
+                            onMouseEnter={props.hoverOn} 
+                            onMouseLeave={props.hoverOff}
+                            hover={props.todo.completed}
                          />
                          </div>
                         <input
@@ -32,6 +34,4 @@ const IndividualTodoItem = (props)=>{
         );
     }
 
-
-
-    export default IndividualTodoItem;
+export default IndividualTodoItem;
