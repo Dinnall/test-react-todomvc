@@ -4,8 +4,7 @@ import IndividualTodoItem from './IndividualTodoItem';
 
 const TodoArchive = (props)=>{
         return(
-            <div>
-                <ul>
+                <ul className="app-container">
                 {props.todos.map((todo,index)=>{
                     return(
                             <IndividualTodoItem
@@ -17,9 +16,10 @@ const TodoArchive = (props)=>{
     
                             />
                     );
-                })}
+                }).reverse()
+        
+            }
                 </ul>
-            </div>
         );
 }
 

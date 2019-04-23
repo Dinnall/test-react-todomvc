@@ -1,39 +1,20 @@
 body {
+  color: #333;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-}
-
-
-.main {
+  font-family: Helvetica;
   width: 600px;
   margin: 0 auto;
   text-align: left;
 }
 
-ul {
-  list-style: none;
-}
-
-ul>li:hover {
-  background-color: #F5F5F5;
-}
-
-
-.form-inline .form-control {
-  width: 50%;
-  margin-left: 80px;
-}
-
-.done {
-  color: red;
-  text-decoration: line-through;
-}
-
 * {
-  color: #333;
   font-size: 20px;
-  font-family: Helvetica;
+}
+
+li{
+  display: flex;
+  align-items: center;
 }
 
 .footer {
@@ -43,17 +24,91 @@ ul>li:hover {
   justify-content: space-between;
 }
 
-.deleteButton{
-  display: flex;
-  justify-content: flex-end;
+input[type=checkbox] {
+  width:25px; 
+  height:25px;
+}
+
+.app-container{
+ padding-left: 0px;
+}
+.todo-list_item{
+  text-align: center;
+  color: green;
+  position: relative;
+  min-height: 50px;
+  margin: 10px auto;
+  flex: 1;
+}
+
+li .todo-list_item{
   visibility: visible;
 }
 
-.hideDeleteButton{
-  display: flex;
+.completed{
+  text-decoration: line-through;
+}
+
+.container{
+  background-color: yellow;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.delete { 
+  opacity: 0; 
+}
+
+.delete:hover{ 
+  opacity: 1; 
+}
+
+
+
+/*      &:hover {
+        .delete {
+          border: none;
+          outline: none;
+          color: $primary_color;
+          font-weight: 400;
+          cursor: pointer;
+          font-size: 14px;
+          opacity: 1;
+        }
+      }*/
+
+
+
+/*.form-inline .form-control {
+  width: 50%;
+  margin-left: 80px;
+}
+
+.done {
+  color: red;
+  text-decoration: line-through;
+}*/
+
+
+
+
+
+/*.deleteButton{
+  justify-content: flex-end;
+  visibility: visible;
+}
+*/
+/*.hideDeleteButton{
   justify-content: flex-end;
   visibility: hidden;
-}
+}*/
+
+
+/*.btn-right{
+  visibility: hidden;
+}*/
+
+
 
 
 

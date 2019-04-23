@@ -4,33 +4,31 @@ import DeleteItem from './DeleteItem'
 const IndividualTodoItem = (props)=>{
 
         return(
-               <div >
-                <li onClick={()=>props.handleListItemClick(props.todo)}
-                    className={(props.todo.completed===true)?'completed' : ''}
-                    
-                    >
+               <div className='container'>
+                <li  onClick={()=>props.handleListItemClick(props.todo)}
+                    className={(props.todo.completed===true)?'completed delete' : 'delete' }>
 
-                    <div>
-                        <span>
+                <input
+                   className='checkbox'
+                    type="checkbox"
+                     onClick={(e)=>props.handleCheckboxClick(props.todo,e)}
+                     checked ={props.todo.completed}
+                        />
+
+                   <p className= 'todo-list_item ' >
                             {props.todo.value}
-                        </span>
-                         <div>
-                         <DeleteItem
+                    </p>
+
+                    <div className=''>
+                     <DeleteItem
                             handleClick={props.handleClick}
                             todo={props.todo}
-                            onMouseEnter={props.hoverOn} 
-                            onMouseLeave={props.hoverOff}
                             hover={props.todo.completed}
-                         />
-                         </div>
-                        <input
-                            type="checkbox"
-                            onClick={(e)=>props.handleCheckboxClick(props.todo,e)}
-                            checked ={props.todo.completed}
-                        />
-                    </div>
-                </li>
-                </div>
+                       />
+                       </div>
+
+                   </li>
+               </div>
         );
     }
 

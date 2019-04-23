@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-
-
 import CompetedLength from './components/CompetedLength';
 import TodoArchive from './components/TodoArchive';
 import AddItemToList from './components/AddItemToList';
+
 
 export default class App extends Component{
     constructor(props) {
@@ -58,13 +57,6 @@ handleClick(itemToBeDeleted, e) {
     e.stopPropagation();
  }
 
-hoverOn(){
-      this.setState({ hover: true });
-    }
-
-hoverOff(){ 
-      this.setState({ hover: false });    
-    }
 
 handleKeyPress(e){
         e.preventDefault();
@@ -86,9 +78,7 @@ handleKeyPress(e){
 
 render(){
             return(
-                <div className="main"
-
-                >
+                <div>
 
                     <h1>Todo App</h1>
                     <AddItemToList
